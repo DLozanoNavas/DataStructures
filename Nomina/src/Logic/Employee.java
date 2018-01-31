@@ -6,6 +6,9 @@
 package Logic;
 
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 /**
  *
  * @author dlozanonavas
@@ -161,7 +164,52 @@ public class Employee {
         System.out.println("Total salarios básicos: " + TotalBasicSalary);
     }
     
-    public void ModifyEmployee(Employee EmployeeList, int IndexKey, int option){
+    public void ModifyEmployee(ArrayList<Employee> employeeList, int IndexKey, int LegalMinSalary, int TransportAux,float HealthDiscount, float PensionDiscount) throws IOException {
+                    Employee employee = employeeList.get(IndexKey);
+                    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+
+                    System.out.println("Digite el nombre del empleado");
+                    String EmployeeName = input.readLine();
+                    employee.setName(EmployeeName);
+
+                    System.out.println("Digite el Apellido del empleado");
+                    String EmployeeLastName = input.readLine();
+                    employee.setLastName(EmployeeLastName);
+
+                    System.out.println("Digite el cargo del empleado");
+                    String EmployeeJobPosition = input.readLine();
+                    employee.setJobPosition(EmployeeJobPosition);
+
+                    System.out.println("Digite el salario básico del empleado");
+                    int EmployeeBasicSalary = Integer.parseInt(input.readLine());
+                    employee.setBasicSalary(EmployeeBasicSalary);
+
+                    System.out.println("Digite el número de horas extras trabajadas por el empleado");
+                    int EmployeeExtraHours = Integer.parseInt(input.readLine());
+                    int EmployeeExtraHoursPayment = EmployeeExtraHours * ((EmployeeBasicSalary / 30) / 4);
+                    employee.setExtraHoursPayment(EmployeeExtraHoursPayment);
+
+                    System.out.println("Digite el valor de las comisiones del empleado");
+                    int EmployeeCommissions = Integer.parseInt(input.readLine());
+                    employee.setCommissions(EmployeeCommissions);
+
+                    if (employee.hasTransportAux(employee, LegalMinSalary)) {
+                        employee.setTansportAux(TransportAux);
+                        int totalAcquired = EmployeeBasicSalary + EmployeeExtraHoursPayment + EmployeeCommissions + TransportAux;
+                        employee.setTotalAcquired(totalAcquired);
+                    } else {
+                        employee.setTansportAux(0);
+                        int totalAcquired = EmployeeBasicSalary + EmployeeExtraHoursPayment + EmployeeCommissions;
+                        employee.setTotalAcquired(totalAcquired);
+                    }
+
+                    int HealthWithdraw = (int) (EmployeeBasicSalary * HealthDiscount);
+                    employee.setHealthWithdraw(HealthWithdraw);
+
+                    int PensionWithdraw = (int) (EmployeeBasicSalary * PensionDiscount);
+                    employee.setPensionWithdraw(PensionWithdraw);
+                    employeeList.remove(IndexKey);
+                    employeeList.add(IndexKey, employee);
         
         
     }

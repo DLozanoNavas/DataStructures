@@ -22,8 +22,6 @@ public class Nomina {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-
-
     public static void main(String[] args) throws IOException {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Employee> EmployeeList = new ArrayList<>();
@@ -125,17 +123,19 @@ public class Nomina {
                     Employee employee = new Employee();
                     int ModifyIndex = employee.FindEmployee(EmployeeList, ModifyQuery);
                     Employee ModifyEmployee = EmployeeList.get(ModifyIndex);
-                    
+
                     if (ModifyIndex == -1) {
                         System.out.println("El empleado no existe");
                     } else {
                         employee.DisplayEmployee(ModifyEmployee);
-                        System.out.println("DESEA MODIFICAR ESTE EMPLEADO? \n 1. Sí \n 2. No");
+                        System.out.println("DESEA MODIFICAR ESTE EMPLEADO? \n1. Sí \n2. No");
                         int choice = Integer.parseInt(input.readLine());
-                        if (choice == 1){
-                            ModifyEmployee.ModifyEmployee(ModifyEmployee,ModifyIndex,choice);
-                        }else{
-                            break;
+                        switch (choice) {
+                            case 1:
+                                ModifyEmployee.ModifyEmployee(EmployeeList, ModifyIndex, LegalMinSalary, TransportAux, HealthDiscount, PensionDiscount);
+                                break;
+                            case 2:
+                                break;
                         }
                     }
 
