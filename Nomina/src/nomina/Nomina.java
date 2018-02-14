@@ -41,7 +41,6 @@ public class Nomina {
 
             int option = Integer.parseInt(input.readLine());
             switch (option) {
-
                 case 1:
                     Employee Employee = new Employee();
                     System.out.println("Digite el nombre del empleado");
@@ -123,7 +122,6 @@ public class Nomina {
                     Employee employee = new Employee();
                     int ModifyIndex = employee.FindEmployee(EmployeeList, ModifyQuery);
                     Employee ModifyEmployee = EmployeeList.get(ModifyIndex);
-
                     if (ModifyIndex == -1) {
                         System.out.println("El empleado no existe");
                     } else {
@@ -138,7 +136,6 @@ public class Nomina {
                                 break;
                         }
                     }
-
                     break;
                 case 5:
                     /**
@@ -154,5 +151,4 @@ public class Nomina {
             }
         }
     }
-
 }

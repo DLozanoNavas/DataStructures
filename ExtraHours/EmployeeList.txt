@@ -1,0 +1,10 @@
+Nombre: DanielLozano
+Horas trabajadas: 50
+Identificación: 1.0
+Pago Total: 69000
+
+Nombre: Santiago Pe�a
+Horas trabajadas: 55
+Identificación: 2.0
+Pago Total: 94000
+

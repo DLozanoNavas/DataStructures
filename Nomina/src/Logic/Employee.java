@@ -210,7 +210,5 @@ public class Employee {
                     employee.setPensionWithdraw(PensionWithdraw);
                     employeeList.remove(IndexKey);
                     employeeList.add(IndexKey, employee);
-        
-        
     }
 }
