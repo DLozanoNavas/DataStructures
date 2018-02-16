@@ -111,7 +111,7 @@ public class MatrixOps {
             for (int i = 0; i < this.aRows; i++) {
                 for (int j = 0; j < this.aColumns; j++) {
                     for (int k = 0; k < 1; k++) {
-                        this.MatrixMultiplicationR[i][j] += this.MatrixA[i][k] * this.MatrixA[k][j];
+                        this.MatrixMultiplicationR[i][j] += this.MatrixA[i][k] * this.MatrixB[k][j];
                     }
                 }
             }
