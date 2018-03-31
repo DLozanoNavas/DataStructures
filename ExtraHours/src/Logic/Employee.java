@@ -81,7 +81,6 @@ public class Employee {
     }
 
     public void WriteEmployeeList(ArrayList<Employee> EmployeeList) throws FileNotFoundException, UnsupportedEncodingException {
-            // do something
             try (PrintWriter writer = new PrintWriter("EmployeeList.txt", "UTF-8")) {
                 EmployeeList.stream().map((employee) -> {
                     writer.println("Nombre: " + employee.getName() + "" + employee.getLastName());
@@ -99,7 +98,5 @@ public class Employee {
                     writer.println("");
                 });
             }
-        
-
     }
 }
