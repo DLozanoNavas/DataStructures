@@ -10,8 +10,12 @@ package circularlists;
  * @author dlozanonavas
  */
 public class Node {
-    int data =0;
-    Node Sig;
+    int data;
+    Node next;
+    
+    public Node(int data){
+        this.data = data;
+    }
 
     public int getData() {
         return data;
@@ -21,12 +25,16 @@ public class Node {
         this.data = data;
     }
 
-    public Node getSig() {
-        return Sig;
+    public Node getNext() {
+        return next;
     }
 
-    public void setSig(Node Sig) {
-        this.Sig = Sig;
+    public void setNext(Node Sig) {
+        this.next = Sig;
+    }
+    
+    public void PrintNode(){
+        System.out.println(this.data);
     }
     
 }
