@@ -23,7 +23,7 @@ public class CircularLists {
         CircularList List = new CircularList();
         CircularList c = new CircularList();
         while (true) {
-            System.out.print("1. Agregar nodo al inicio.\n2. Borrar nodo al inicio.\n3. Agregar nodo al final.\n4. Obtener ttotal de nodos.\n5. Consultar nodo.\n0. Cerrar.\nYour option: ");
+            System.out.print("1. Agregar nodo al inicio.\n2. Borrar nodo al inicio.\n3. Agregar nodo al final.\n4. Obtener total de nodos.\n5. Consultar nodo.\n0. Cerrar.\nYour option: ");
             Scanner input = new Scanner(System.in);
             option = input.nextInt();
             switch (option) {
