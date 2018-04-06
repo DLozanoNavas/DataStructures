@@ -23,7 +23,7 @@ public class CircularLists {
         CircularList List = new CircularList();
         CircularList c = new CircularList();
         while (true) {
-            System.out.print("1. Agregar nodo al inicio.\n2. Borrar nodo al inicio.\n3. Agregar nodo al final.\n4. Obtener ttotal de nodos.\n5. Consultar nodo.\n6. hola\n7. Cerrar.\nYour option: ");
+            System.out.print("1. Agregar nodo al inicio.\n2. Borrar nodo al inicio.\n3. Agregar nodo al final.\n4. Obtener ttotal de nodos.\n5. Consultar nodo.\n0. Cerrar.\nYour option: ");
             Scanner input = new Scanner(System.in);
             option = input.nextInt();
             switch (option) {
@@ -51,8 +51,6 @@ public class CircularLists {
                     System.out.print("Digite la posición del elemento que desea consultar en la lista: ");
                     int position = input.nextInt();
                     System.out.println("Elemento en la posición " + position + " es igual a: " + c.elementAt(position));
-                    break;
-                case 6:
                     break;
                 case 0:
                     System.exit(0);
