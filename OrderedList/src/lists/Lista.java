@@ -13,21 +13,19 @@ public class Lista {
 
     private Nodo cabeza = null;
 
-
     void insertar(double x) {
         Nodo nuevo = new Nodo();
         nuevo.cedula = x;
         if (cabeza == null) {
             cabeza = nuevo;
-        } else if(nuevo.cedula<cabeza.cedula ){
+        } else if (nuevo.cedula < cabeza.cedula) {
             nuevo.sig = cabeza;
             cabeza = nuevo;
-        }else if(cabeza.cedula<=nuevo.cedula){
-            nuevo.sig=null;
+        } else if (cabeza.cedula <= nuevo.cedula) {
+            nuevo.sig = null;
             cabeza.sig = nuevo;
         }
     }
-
 
     public void borrarPrimero() {
         if (cabeza != null) {
@@ -100,4 +98,11 @@ public class Lista {
             }
         }
     }
+
+    public class Nodo {
+
+        double cedula;
+        Nodo sig;
+    }
+
 }
