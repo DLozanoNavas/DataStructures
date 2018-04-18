@@ -46,7 +46,11 @@ public class LinkedListBasedQueue {
      */
     public Customer dequeue() {
         if (isEmpty()) {
+            try{
             throw new NoSuchElementException("Cannot dequeue from empty Queue");
+            }catch(NoSuchElementException e){
+                e.getMessage();
+            }
         }
         
         Customer customer = head.customer;
@@ -64,9 +68,13 @@ public class LinkedListBasedQueue {
      *
      * @return {@link object}
      */
-    public Object peek() {
+    public Customer peek() {
         if (head == null) {
+            try{
             throw new NoSuchElementException("Cannot peek from empty Queue");
+            }catch(Exception e){
+                e.getMessage();
+            }
         }
         return head.customer;
     }

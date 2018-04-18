@@ -13,7 +13,7 @@ public class Customer {
     String Name;
     double ID;
     double Payment;
-    String Service;
+    int Service;
 
     public String getName() {
         return Name;
@@ -39,11 +39,11 @@ public class Customer {
         this.Payment = Payment;
     }
 
-    public String getService() {
+    public int getService() {
         return Service;
     }
 
-    public void setService(String Service) {
+    public void setService(int Service) {
         this.Service = Service;
     }
     public void printCustomer(){
