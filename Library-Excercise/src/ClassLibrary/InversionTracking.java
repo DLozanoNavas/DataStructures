@@ -12,8 +12,8 @@ package ClassLibrary;
 public class InversionTracking {
 
     double Capital;
-    double Interests;
-    double Balance;
+    double Interes=0.02;
+    double Balance=0f;
     int months;
 
     public void setCapital(double capital) {
@@ -32,28 +32,26 @@ public class InversionTracking {
         return this.months;
     }
 
-    public void setInterests() {
-        this.Interests =+((this.getCapital() * 0.2) * this.getMonths());
-        
-    }
-    public void calculateInterests(){
+    public void setInterests(double interest) {
+        this.Interes= interest;
 
-        for (int i =0; i<this.getMonths();i++){
-                    this.setInterests();
-        this.setBalance();
-        System.out.println("\nMonth: " + i);
-        System.out.println("Capital: " + this.getCapital());
-        System.out.println("Interests: " + this.getInterests());
-        System.out.println("Balance: " + this.getBalance() + "\n");
+    }
+
+    public void calculateInterests() {
+
+        for (int i = 0; i < this.getMonths(); i++) {
+            this.setBalance();
+            System.out.println("\nMonth: " + i);
+            this.printBalance();
         }
     }
 
-    public double getInterests() {
-        return this.Interests;
+    public double getInteres() {
+        return this.Interes;
     }
 
     public void setBalance() {
-        this.Balance = this.getCapital() + (this.getMonths()*this.getInterests());
+        this.Balance += (this.getCapital()*this.getInteres()) * (this.getMonths());
     }
 
     double getBalance() {
@@ -61,6 +59,8 @@ public class InversionTracking {
     }
 
     public void printBalance() {
-
+        System.out.println("Capital: " + this.getCapital());
+        System.out.println("Interests: " + this.getInteres());
+        System.out.println("Balance: " + this.getBalance() + "\n");
     }
 }

@@ -16,7 +16,7 @@ public class StudentGrades {
     double Grade_2;
     double Grade_3;
     double FinalGrade;
-    
+
     String Annotations = "";
     String StudentName;
     
@@ -42,7 +42,7 @@ public class StudentGrades {
     double getFinalGrade(){
         return this.FinalGrade;
     }
-    public void setAnnotations(String annotations){
+    public void setAnnotations(String annotations){       
         this.Annotations = Annotations + annotations + "\n";
     }
     public String getAnnotations(){

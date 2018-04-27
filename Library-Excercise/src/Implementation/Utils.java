@@ -13,7 +13,7 @@ import ClassLibrary.*;
  *
  * @author dlozanonavas
  */
-public class Week2 {
+public class Utils {
 
     /**
      * @param args the command line arguments
@@ -90,20 +90,19 @@ public class Week2 {
                                 KeepAdding = false;
                             }
                             // Print Students
-
                         } catch (NumberFormatException ex) {
                             System.out.print(ex.getMessage());
-                            System.out.println("Exception catched, finishing");
+                            System.out.println("Exception catched, retry.");
                         }
                     }
                     break;
                 case 3:
                     InversionTracking Obj = new InversionTracking();
                     System.out.print("Capital: ");
-                    double capital = Double.parseDouble(input.nextLine());
+                    double capital = input.nextDouble();
                     Obj.setCapital(capital);
                     System.out.print("Months: ");
-                    int months = Integer.parseInt(input.nextLine());
+                    int months = input.nextInt();
                     Obj.setMonths(months);
                     Obj.calculateInterests();
                     break;
