@@ -10,21 +10,36 @@ package ClassLibrary;
  * @author dlozanonavas
  */
 public class TemperatureConversion {
-    
+
     double Kelvin;
-    double  Farenheit;
-    double  Rankin;
-    double  Celsius;
-    
-    
-    public void CalculateTemperatures(double Fahrenheit){
-        this.Celsius = (Fahrenheit-32)*(5/9);
-        this.Rankin = Fahrenheit+460;
-        this.Kelvin = this.Celsius+273;
-        System.out.println("Temperatura en Fahrenheith: " + Fahrenheit);
-        System.out.println("Temperatura en Celsius: " + this.Celsius );
-        System.out.println("Temperatura en Rankin: " + this.Rankin );
-        System.out.println("Temperatura en Kelvin: " + this.Kelvin ); 
+    double Fahrenheit;
+    double Celsius;
+
+    public void Fahrenheit(double fahrenheit) {
+        this.Fahrenheit = fahrenheit;
+        this.Kelvin = (fahrenheit + 459.67) * 5 / 9;
+        this.Celsius = (fahrenheit - 32) * 5 / 9;
+        this.print();
     }
-       
+
+    public void Celcius(double celcius) {
+        this.Celsius = celcius;
+        this.Fahrenheit = celcius * (9 / 5) + 32;
+        this.Kelvin = celcius + 273;
+        this.print();
+    }
+
+    public void Kelvin(double kelvin) {
+        this.Kelvin = kelvin;
+        this.Celsius = kelvin - 273.15;
+        this.Fahrenheit = kelvin * (9 / 5) - 459.67;
+        this.print();
+    }
+
+    public void print() {
+        System.out.println("Temperatura en Fahrenheit: " + this.Fahrenheit);
+        System.out.println("Temperatura en Celsius: " + this.Celsius);
+        System.out.println("Temperatura en Kelvin: " + this.Kelvin);
+    }
+
 }
