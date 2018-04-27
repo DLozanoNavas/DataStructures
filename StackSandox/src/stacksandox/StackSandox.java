@@ -18,7 +18,7 @@ public class StackSandox {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
         int max = 0;
         Scanner S = new Scanner(System.in);
         Stack<Product> Products = new Stack<Product>();
@@ -32,19 +32,19 @@ public class StackSandox {
             int cod = S.nextInt();
             System.out.println("Stock del producto: ");
             int stock = S.nextInt();
-            Product a = new Product(name,cod,stock); 
+            Product a = new Product(name, cod, stock);
             Products.push(a);
         }
-System.out.println("\nProductos con Stock menor a 10: ");
+        System.out.println("\nProductos con Stock menor a 10: ");
         while (!Products.isEmpty()) {
             Product tmp = Products.peek();
             ProductsAux.push(tmp);
             if (tmp.getStock() < 10) {
-                tmp.print();  
+                tmp.print();
             }
             Products.pop();
         }
-        while(!ProductsAux.isEmpty()){
+        while (!ProductsAux.isEmpty()) {
             Products.push(ProductsAux.pop());
         }
     }
