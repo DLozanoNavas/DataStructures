@@ -9,6 +9,6 @@ package trees;
  *
  * @author dlozanonavas
  */
-public interface TreeInterface {
+public interface iTree {
     
 }

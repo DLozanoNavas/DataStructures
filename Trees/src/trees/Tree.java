@@ -10,13 +10,14 @@ package trees;
  * @author dlozanonavas
  */
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Generic n-ary tree.
  *
  * @param <T> Any class type
  */
-public class Tree<T> {
+public class Tree<T> implements iTree {
 
     private Node<T> root;
 
@@ -32,8 +33,7 @@ public class Tree<T> {
     /**
      * Checks if the tree is empty (root node is null)
      *
-     * @return <code>true</code> if the tree is empty,
-     * <code>false</code> otherwise.
+     * @return 
      */
     public boolean isEmpty() {
         return root == null;
@@ -89,7 +89,6 @@ public class Tree<T> {
         int n = node.getChildren().size();
         for (Node<T> child : node.getChildren())
             n += getNumberOfDescendants(child);
-
         return n;
 
     }
@@ -98,7 +97,6 @@ public class Tree<T> {
         boolean res = false;
         if (node.getData().equals(keyNode))
             return true;
-
         else {
             for (Node<T> child : node.getChildren())
                 if (find(child, keyNode))
@@ -223,7 +221,7 @@ public class Tree<T> {
 
         currentPath.add(node);
 
-        if (node.getChildren().size() == 0) {
+        if (node.getChildren().isEmpty()) {
             // This is a leaf
             paths.add(clone(currentPath));
         }
@@ -236,9 +234,11 @@ public class Tree<T> {
     }
 
     private ArrayList<Node<T>> clone(ArrayList<Node<T>> list) {
-        ArrayList<Node<T>> newList = new ArrayList<Node<T>>();
-        for (Node<T> node : list)
-            newList.add(new Node<T>(node));
+        ArrayList<Node<T>> newList = new ArrayList<>();
+        list.forEach((node) -> {
+            boolean add;
+            add = newList.add(new Node<>(node));
+        });
 
         return newList;
     }

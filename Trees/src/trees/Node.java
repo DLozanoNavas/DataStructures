@@ -38,7 +38,7 @@ public class Node<T> {
         children = new ArrayList<Node<T>>();
     }
 
-    /**
+    /*
      *
      * Add a child to this node.
      *
